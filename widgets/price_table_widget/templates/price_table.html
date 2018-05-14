@@ -1,0 +1,18 @@
+<div>
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+          <tr>
+            <th>Nazwa usługi</th>
+            <th style="text-align: center">Cena</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for price in price_table %}
+            <tr>
+                <td >{{ price.name }}</td>
+                <td style="text-align: center">{{ price.price }} zł</td>
+          </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>

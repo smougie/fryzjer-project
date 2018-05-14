@@ -1,0 +1,32 @@
+{#{% load thumbnail %}#}
+{#<div>#}
+{#    {% for n in barbers %}#}
+{#        {{ n.first_last_name }}#}
+{#        {% for i in n.completed_courses.all %}#}
+{#            {{ i }}#}
+{#        {% endfor %}#}
+{#    {% endfor %}#}
+{#</div>#}
+
+
+<div>
+    {% for barber in barbers %}
+    <div class="row mb-4">
+
+        <div class="col-md-7">
+          <img class="img-fluid" src="/media/{{ barber.image }}" alt="">
+        </div>
+        <div class="col-md-4">
+          <h3 class="my-3">{{ barber.first_last_name }}</h3>
+          <p>{{ barber.description }}</p>
+          <h5 class="my-3">Ukończone kursy:</h5>
+          <ul>
+              {% for course in barber.completed_courses.all %}
+                  <li>{{ course }}</li>
+                  {% endfor %}
+          </ul>
+        </div>
+
+    </div>
+    {% endfor %}
+</div>
